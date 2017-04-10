@@ -1,4 +1,4 @@
-/*¶ÓÁĞµÄÁ´±íÊµÏÖ*/
+/*é˜Ÿåˆ—çš„é“¾è¡¨å®ç°*/
 #pragma once
 #include <iostream>
 #include <stdlib.h>
@@ -12,11 +12,11 @@ struct QNode {
 
 struct LinkQueue				
 {
-	QNode *front; //front->Next ÊÇ¶ÓÁĞµÄµÚÒ»¸ö½Úµã¡£
+	QNode *front; //front->Next æ˜¯é˜Ÿåˆ—çš„ç¬¬ä¸€ä¸ªèŠ‚ç‚¹ã€‚
 	QNode *rear;
 };
 
-LinkQueue LinkQueueInit()		//¶ÓÁĞµÄÁ´±íÊµÏÖ³õÊ¼»¯¡£
+LinkQueue LinkQueueInit()		//é˜Ÿåˆ—çš„é“¾è¡¨å®ç°åˆå§‹åŒ–ã€‚
 {
 	QNode *qtmp = (QNode*)malloc(sizeof(QNode));
 	if (qtmp == NULL) {
@@ -29,7 +29,7 @@ LinkQueue LinkQueueInit()		//¶ÓÁĞµÄÁ´±íÊµÏÖ³õÊ¼»¯¡£
 	return q;
 }
 
-void LinkQueueDestroy(LinkQueue &Q)		//Ïú»ÙÁ´±í¶ÓÁĞ¡£
+void LinkQueueDestroy(LinkQueue &Q)		//é”€æ¯é“¾è¡¨é˜Ÿåˆ—ã€‚
 {
 	while (Q.front)
 	{
@@ -39,7 +39,7 @@ void LinkQueueDestroy(LinkQueue &Q)		//Ïú»ÙÁ´±í¶ÓÁĞ¡£
 	}
 }
 
-void EnQueue(LinkQueue &Q, ElemType e)	//ÔªËØÈë¶Ó¡£
+void EnQueue(LinkQueue &Q, ElemType e)	//å…ƒç´ å…¥é˜Ÿã€‚
 {
 		QNode *qtmp = (QNode*)malloc(sizeof(QNode));
 		if (qtmp == NULL) {
@@ -50,7 +50,7 @@ void EnQueue(LinkQueue &Q, ElemType e)	//ÔªËØÈë¶Ó¡£
 		Q.rear = qtmp;
 }
 
-ElemType DeQueue(LinkQueue &Q)			//ÔªËØ³ö¶Ó¡£
+ElemType DeQueue(LinkQueue &Q)			//å…ƒç´ å‡ºé˜Ÿã€‚
 {
 	QNode *qtmp = (QNode*)malloc(sizeof(QNode));
 	if (qtmp == NULL) {
@@ -63,7 +63,7 @@ ElemType DeQueue(LinkQueue &Q)			//ÔªËØ³ö¶Ó¡£
 	return tmp;
 }
 
-void printQueue(LinkQueue Q)			//±éÀú´òÓ¡¶ÓÁĞ¡£
+void printQueue(LinkQueue Q)			//éå†æ‰“å°é˜Ÿåˆ—ã€‚
 {
 	QNode *qtmp = Q.front->Next;
 	while (qtmp != Q.rear)
